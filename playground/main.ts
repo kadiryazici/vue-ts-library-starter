@@ -1,2 +1,6 @@
-// eslint-disable-next-line no-alert
-alert('Hello World!')
+import { createApp } from 'vue'
+import App from './App.vue'
+
+const app = createApp(App)
+
+app.mount('#app')
