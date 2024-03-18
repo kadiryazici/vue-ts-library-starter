@@ -1,9 +1,5 @@
 {
   "extends": "./tsconfig.playground.json",
-  "exclude": [],
-  "include": [
-    "tests/**/*.ts"
-  ],
   "compilerOptions": {
     "composite": true,
     "lib": [],
@@ -11,5 +7,9 @@
       "node"
     ],
     "ignoreDeprecations": "5.0"
-  }
+  },
+  "include": [
+    "tests/**/*.ts"
+  ],
+  "exclude": []
 }

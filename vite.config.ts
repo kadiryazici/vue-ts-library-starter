@@ -1,16 +1,16 @@
-import VueJSX from '@vitejs/plugin-vue-jsx';
-import path from 'path';
-import ViteDTS from 'vite-plugin-dts';
-import Vue from '@vitejs/plugin-vue';
-import { defineConfig, type UserConfigExport } from 'vitest/config';
+import path from 'node:path'
+import VueJSX from '@vitejs/plugin-vue-jsx'
+import ViteDTS from 'vite-plugin-dts'
+import Vue from '@vitejs/plugin-vue'
+import { type UserConfigExport, defineConfig } from 'vitest/config'
 
 const devConfig: UserConfigExport = {
   plugins: [
     VueJSX(), //
     Vue(),
   ],
-  root: 'playground'
-};
+  root: 'playground',
+}
 
 const prodConfig: UserConfigExport = {
   plugins: [
@@ -37,19 +37,25 @@ const prodConfig: UserConfigExport = {
       },
     },
   },
-};
+}
 
 const testConfig: UserConfigExport = {
   plugins: [VueJSX(), Vue()],
   test: {
     environment: 'jsdom',
   },
-};
+}
 
 export default defineConfig(({ mode }) => {
-  if (mode === 'production') return prodConfig;
-  if (mode === 'test') return testConfig;
-  if (mode === 'development') return devConfig;
+  if (mode === 'production') {
+    return prodConfig
+  }
+  if (mode === 'test') {
+    return testConfig
+  }
+  if (mode === 'development') {
+    return devConfig
+  }
 
-  throw new Error('Invalid mode');
-});
+  throw new Error('Invalid mode')
+})
