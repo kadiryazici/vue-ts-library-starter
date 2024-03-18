@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.app.json",
+  "exclude": [],
+  "include": [
+    "tests/**/*.ts"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "lib": [],
+    "types": [
+      "node"
+    ],
+    "ignoreDeprecations": "5.0"
+  }
+}
