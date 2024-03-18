@@ -6,7 +6,7 @@ import { type UserConfigExport, defineConfig } from 'vitest/config'
 
 const devConfig: UserConfigExport = {
   plugins: [
-    VueJSX(), //
+    VueJSX(),
     Vue(),
   ],
   root: 'playground',
@@ -14,7 +14,8 @@ const devConfig: UserConfigExport = {
 
 const prodConfig: UserConfigExport = {
   plugins: [
-    VueJSX(), //
+    VueJSX(),
+    Vue(),
     ViteDTS({
       outDir: 'dist/types',
       include: ['src'],
